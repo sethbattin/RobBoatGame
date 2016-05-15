@@ -1,0 +1,3 @@
+[submodule "lib/gameloop"]
+	path = lib/gameloop
+	url = git@bitbucket.org:sbattin/gameloop.git
