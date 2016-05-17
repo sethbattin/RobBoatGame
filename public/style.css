@@ -1,0 +1,14 @@
+html {
+    height: 100%;
+    background-color:white;
+}
+body {
+    margin: 0;
+}
+canvas#game {
+    display:block;
+    width: 800px;
+    margin: 0 auto;
+    border: 1px solid gray;
+    height: auto;
+}
