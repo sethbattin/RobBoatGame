@@ -2,6 +2,15 @@
 =============
 Alpcapatrol's boat game.  srsly.
 
+To Do
+-----
+1. World map &#10004;
+1. Boat traversing world map
+1. Landing dialog options
+1. Deck combat
+1. collectibles/deck changes
+1. end game
+
 Plot
 ----
 Very story-based.  You're on a boat, and you travel from island to island and see what you find.  you do not fight on the boat.
