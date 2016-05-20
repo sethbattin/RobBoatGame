@@ -1,12 +1,11 @@
 # RobBoatGame
 =============
-Alpcapatrol's boat game.  srsly.
+Alpcapatrol's boat game.  srsly.  Play here: http://itsobviously.com/robboatgame
 
 To Do
 -----
 1. World map &#10004;
-1. Boat traversing world map &#10004;  
-	(still needs some data entry for all the islands)
+1. Boat traversing world map &#10004;
 1. Landing dialog options
 1. Deck combat
 1. collectibles/deck changes
