@@ -5,9 +5,17 @@ Alpcapatrol's boat game.  srsly.  Play here: http://itsobviously.com/robboatgame
 To Do
 -----
 1. World map &#10004;
+   1. update island bounds to match final map
+   1. randomization
 1. Boat traversing world map &#10004;
+   1. highlight available destinations before hover
+   1. fog of war
 1. Landing dialog options
 1. Deck combat
+   1. current hand
+   1. draw pile
+   1. turns cycle
+   1. stamina bar
 1. collectibles/deck changes
 1. end game
 
