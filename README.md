@@ -16,7 +16,7 @@ Plot
 Very story-based.  You're on a boat, and you travel from island to island and see what you find.  you do not fight on the boat.
 
 
-Mechanics  
+Mechanics
 ---------
 roughly 60 minute game time, 8 levels of islands, 7.5 minutes per game  choose one island, and move to the next island 
 
