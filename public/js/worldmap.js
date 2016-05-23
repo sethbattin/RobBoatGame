@@ -147,32 +147,24 @@ var WorldMap = function(){
     };
 
 
-    this.Island = function(name, x, y, w, h){
+    var Island = this.Island = function(name, x, y, w, h){
         this.name = name;
-        this.x = x;
-        this.y = y;
-        this.w = w;
-        this.h = h;
+        Island.prototype.constructor.call(this, x, y, w, h);
         this.contains = function(o){
             if (!o.hasOwnProperty('x') || !o.hasOwnProperty('y')){
                 return false;
             }
             var o_w = camera.getWorldCoords(o.x, o.y, canvas);
 
-            return (
-            (o_w.x > this.x) && (o_w.x < (this.x + this.w)) &&
-            (o_w.y > this.y) && (o_w.y < (this.y + this.h))
-            );
+            return Island.prototype.contains.call(this, o_w);
         };
         this.highlight = function(context){
             context.fillRect(this.x, this.y, this.w, this.h);
 
         };
-        this.center = function(){
-            return {x: this.x + this.w / 2, y: this.y + this.h / 2}
-        };
 
     };
+    this.Island.prototype  = new UIRegion();
 
     var islands = [];
     this.addIsland = function(name, x, y, w, h){
