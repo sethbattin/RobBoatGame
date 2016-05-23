@@ -154,7 +154,7 @@ var WorldMap = function(){
             if (!o.hasOwnProperty('x') || !o.hasOwnProperty('y')){
                 return false;
             }
-            var o_w = camera.getWorldCoords(o.x, o.y, canvas);
+            var o_w = camera.getWorldCoords(o.x, o.y);
 
             return Island.prototype.contains.call(this, o_w);
         };
