@@ -16,18 +16,8 @@
     var islandUI = {
         input: new Input(),
         activeIsland: null,
-        setSailRegion: {
-            x: 40,
-            y: 40,
-            w: 140,
-            h: 40,
-            contains: function(o){
-                return (
-                (o.x > this.x) && (o.x < (this.x + this.w)) &&
-                (o.y > this.y) && (o.y < (this.y + this.h))
-                );
-            }
-        },
+        setSailRegion: new UIRegion(40, 40, 140, 60),
+        fightRegion: new UIRegion(40, 110, 140, 60),
         update:function(context, timediff, timestamp){
             this.input.update(context);
             if (this.input.isUIPush('setsail')){
@@ -38,18 +28,36 @@
             context.save();
             context.setTransform(1, 0, 0, 1, 0, 0);
             context.font = "bolder 32px arial";
+            context.testAlign = "left";
+            
+            // set sail button
+            var r = this.setSailRegion;
             if (this.input.isUIOver('setsail')){
+                context.fillStyle = "rgba(255, 255, 255, 0.25)";
+                context.fillRect(r.x, r.y, r.w, r.h);
                 context.fillStyle = "white";
-                context.fillText('Set Sail', 91, 71);
+                context.fillText('Set Sail', r.x + 11, r.y + 41);
             }
             context.fillStyle = "black";
-            context.fillText('Set Sail', 90, 70);
+            context.fillText('Set Sail', r.x + 10, r.y + 40);
+
+            // fight button
+            r = this.fightRegion;
+            if (this.input.isUIOver('fight')){
+                context.fillStyle = "rgba(255, 255, 255, 0.25)";
+                context.fillRect(r.x, r.y, r.w, r.h);
+                context.fillStyle = "white";
+                context.fillText('Fight!', r.x + 11, r.y + 41);
+            }
+            context.fillStyle = "black";
+            context.fillText('Fight!', r.x + 10, r.y + 40);
 
             context.restore();
         }
     };
     islandUI.input.setButtonId('lclick', 'mouse', 1);
     islandUI.input.setUI('setsail', islandUI.setSailRegion, ['lclick']);
+    islandUI.input.setUI('fight', islandUI.fightRegion, ['lclick']);
         
     var game = new (function Game(){
         this.activeIsland = null;
